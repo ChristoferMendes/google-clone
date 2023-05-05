@@ -1,4 +1,3 @@
-import React from 'react'
 import CountryLookup from './CountryLookup'
 
 const paddings = 'px-8 py-3'

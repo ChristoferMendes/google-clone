@@ -1,4 +1,4 @@
-import React from 'react'
+ct from 'react'
 
 export default function Head() {
   return (

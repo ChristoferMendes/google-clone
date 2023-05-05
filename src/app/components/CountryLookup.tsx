@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface IpResponse {
   status: string;
   country: string;
