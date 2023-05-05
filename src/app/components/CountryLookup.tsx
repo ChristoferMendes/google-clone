@@ -1,7 +1,23 @@
 import React from 'react'
 
-export default function CountryLookup() {
+interface IpResponse {
+  status: string;
+  country: string
+}
+
+const getCountry = async () => {
+  const res = await fetch('http://ip-api.com/json')
+
+  const data: IpResponse = await res.json()
+  return data;
+}
+
+export default async function CountryLookup() {
+  const countryData = await getCountry()
+
+  console.log(countryData)
+
   return (
-    <div>CountryLookup</div>
+    <div>{countryData.country}</div>
   )
 }
