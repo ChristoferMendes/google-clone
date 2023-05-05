@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import React from 'react'
 import { TbGridDots } from 'react-icons/tb'
 
 export default function HomeHeader() {
