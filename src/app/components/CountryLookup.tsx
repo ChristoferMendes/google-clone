@@ -2,7 +2,8 @@ import React from 'react'
 
 interface IpResponse {
   status: string;
-  country: string
+  country: string;
+  countryCode: string
 }
 
 const getCountry = async () => {
@@ -14,9 +15,6 @@ const getCountry = async () => {
 
 export default async function CountryLookup() {
   const countryData = await getCountry()
-
-  console.log(countryData)
-
   return (
     <div>{countryData.country}</div>
   )
