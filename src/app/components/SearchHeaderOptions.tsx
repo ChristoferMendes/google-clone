@@ -1,27 +1,33 @@
 'use client'
-import { AiOutlineSearch } from "react-icons/ai";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import SearchHeaderSelectButton from "./SearchHeaderSelectButton";
 
 type Tab = 'All' | 'Images';
 
 export default function SearchHeaderOptions() {
   const pathName = usePathname()
   const router = useRouter()
-
-  const color = pathName === '/search/web' ? 'text-blue-500 border-blue-600' : 'text-gray-500'
-
+  const searchParams = useSearchParams()
   
+  const searchTerm = searchParams.get('searchTerm')
+
+  const getColor = (path: 'web' | 'image') => {
+    const selectedStyle = 'border-blue-600 text-blue-500'
+    const unselectedBorderStyle = 'border-transparent'
+
+    return pathName === `/search/${path}` ? selectedStyle : unselectedBorderStyle
+  }
+
   const selectTab = (tab: Tab) => {
-   
-    
+    const path = tab === 'Images' ? 'image' : 'web'
+
+    router.push(`search/${path}?${searchTerm}`)
   }
 
   return (
-    <div>
-      <div onClick={() => selectTab('All')} className={`flex items-center space-x-1 border-b-4 border-transparent active:text-blue-500 cursor-pointer pb-3 px-2 ${color}`}>
-        <AiOutlineSearch className="text-md" />
-        <p className="">All</p>
-      </div>
+    <div className="flex space-x-2 select-none border-b w-full justify-center lg:justify-start lg:pl-48 text-sm">
+      <SearchHeaderSelectButton onClick={selectTab} color={getColor('web')} tab="All" />
+      <SearchHeaderSelectButton onClick={selectTab} color={getColor('image')} tab="Images" />
     </div>
   )
 }
