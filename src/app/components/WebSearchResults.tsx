@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Data } from "../search/web";
+import { Data } from "../search";
 import Parser from "html-react-parser";
 
 export default function WebSearchResults({ results }: { results: Data }) {

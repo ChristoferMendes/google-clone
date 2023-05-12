@@ -1,6 +1,7 @@
 import Link from "next/link"
-import { Data } from "."
+import { Data } from ".."
 import WebSearchResults from "@/app/components/WebSearchResults"
+import NoResultsFoundOnSearch from "@/app/components/NoResultsFoundOnSearch"
 
 const getSearchData = async (search: string | undefined) => {
   if (!search) return
@@ -24,13 +25,7 @@ export default async function WebSearchPage({ searchParams }: { searchParams: { 
   const { items } = searchData ?? {};
 
   if (!items) {
-    return (
-      <div className="flex flex-col justify-center items-center mt-4">
-        <h1 className="text-3xl mb-4">No results found</h1>
-        <p className="text-lg">Try searching for something else or go back to the homepage.</p>
-        <Link href={`/`} className="text-blue-500">Home</Link>
-      </div>
-    )
+    return <NoResultsFoundOnSearch />
   }
 
   return (

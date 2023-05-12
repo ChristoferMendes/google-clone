@@ -7,6 +7,16 @@ export interface Data {
   items:             Item[];
 }
 
+export interface ImageData extends Data {
+  items: ImageItem[]
+}
+
+interface ImageItem extends Item {
+  image: {
+    contextLink: string
+  }
+}
+
 export interface Context {
   title: string;
 }

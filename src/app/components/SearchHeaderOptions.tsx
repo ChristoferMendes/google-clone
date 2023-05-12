@@ -8,8 +8,8 @@ export default function SearchHeaderOptions() {
   const pathName = usePathname()
   const router = useRouter()
   const searchParams = useSearchParams()
-  
   const searchTerm = searchParams.get('searchTerm')
+  
 
   const getColor = (path: 'web' | 'image') => {
     const selectedStyle = 'border-blue-600 text-blue-500'
@@ -21,7 +21,8 @@ export default function SearchHeaderOptions() {
   const selectTab = (tab: Tab) => {
     const path = tab === 'Images' ? 'image' : 'web'
 
-    router.push(`search/${path}?${searchTerm}`)
+    console.log(searchTerm)
+    router.push(`search/${path}?searchTerm=${searchTerm}`)
   }
 
   return (
