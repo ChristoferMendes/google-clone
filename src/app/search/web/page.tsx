@@ -1,11 +1,13 @@
 import Link from "next/link"
 import { Data } from "."
+import WebSearchResults from "@/app/components/WebSearchResults"
 
 const getSearchData = async (search: string | undefined) => {
   if (!search) return
 
   const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${search}`)
 
+  console.log(`triggered search for ${search}`)
   if (!response.ok) {
     throw new Error('Failed to fetch search data')
   }
@@ -33,9 +35,7 @@ export default async function WebSearchPage({ searchParams }: { searchParams: { 
 
   return (
     <>
-      {items.map(item => (
-        <h1 key={item.cacheId}>{item.title}</h1>
-      ))}
+      {searchData && <WebSearchResults results={searchData} />}
     </>
   )
 

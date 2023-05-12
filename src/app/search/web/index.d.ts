@@ -1,7 +1,3 @@
-export interface Pokedex {
-  data: Data;
-}
-
 export interface Data {
   kind:              string;
   url:               URL;
