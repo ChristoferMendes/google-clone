@@ -8,7 +8,6 @@ const getSearchData = async (search: string | undefined, startIndex: string) => 
 
   const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${search}&start=${startIndex}`)
 
-  console.log(`triggered search for ${search}`)
   if (!response.ok) {
     throw new Error('Failed to fetch search data')
   }
