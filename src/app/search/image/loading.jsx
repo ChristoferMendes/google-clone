@@ -9,7 +9,7 @@ const ImageSkeleton = () => {
 };
 
 export default function loading() {
-  const skeletons = Array(5).fill(0)
+  const skeletons = Array(3).fill(0)
 
   return (
     <div className="pt-10 mx-2 lg:pl-52 max-w-6xl flex sm:space-x-4 flex-col sm:flex-row pb-42">
