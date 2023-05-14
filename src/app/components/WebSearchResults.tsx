@@ -2,9 +2,9 @@
 import Link from "next/link";
 import { Data } from "../search";
 import Parser from "html-react-parser";
+import WebSearchFavIcon from "./WebSearchFavIcon";
 
-export default function WebSearchResults({ results }: { results: Data }) {
-  console.log(results.items)
+export default async function WebSearchResults({ results }: { results: Data }) {
 
 
   return (
@@ -16,7 +16,7 @@ export default function WebSearchResults({ results }: { results: Data }) {
         <div className="mb-8 max-w-xl " key={result.cacheId}>
           <div className="group flex flex-col">
             <Link href={result.link} className="flex">
-              <img src={result.pagemap.cse_image?.[0].src} alt="" className="w-12 rounded-full h-12" />
+              <WebSearchFavIcon domain={result.displayLink}/>
               <div>
                 <p className="text-md">{result.displayLink}</p>
                 <p className="text-sm truncate text-zinc-700">{result.formattedUrl}</p>
