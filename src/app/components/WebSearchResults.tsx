@@ -6,8 +6,6 @@ import WebSearchFavIcon from "./WebSearchFavIcon";
 import PaginationButtons from "./PaginationButtons";
 
 export default function WebSearchResults({ results }: { results: Data }) {
-  console.log(results)
-
   return (
     <div className="w-full mx-auto px-3 pb-40 sm:pb-24 sm:pl-[5%] md:pl-[13%] lg:pl-48">
       <p className="text-gray-600 text-sm mb-5 mt-3">
