@@ -25,7 +25,7 @@ export default function loading() {
   return (
     <>
       {skeletons.map(() => (
-        <TextSkeleton />
+        <TextSkeleton key={Math.random()}/>
       ))}
     </>
   )

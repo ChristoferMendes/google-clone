@@ -15,7 +15,7 @@ export default function loading() {
     <div className="pt-10 mx-2 lg:pl-52 max-w-6xl flex sm:space-x-4 flex-col sm:flex-row pb-42">
       <ImageSkeleton />
       <div className="hidden sm:inline-flex sm:space-x-4">
-        {skeletons.map(() => <ImageSkeleton />)}
+        {skeletons.map(() => <ImageSkeleton key={Math.random()}/>)}
       </div>
     </div>
   );
