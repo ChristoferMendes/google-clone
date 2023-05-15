@@ -14,7 +14,7 @@ export default function SearchHeaderSelectButton({ onClick, tab, color }: { onCl
     <div>
       <div onClick={() => onClick(tab)} className={`flex items-center space-x-1 border-b-4 active:text-blue-500 cursor-pointer pb-3 px-2 ${color}`}>
         {icons[tab]}
-        <p className="">{tab}</p>
+        <p className={`${color}`}>{tab}</p>
       </div>
     </div>
   )

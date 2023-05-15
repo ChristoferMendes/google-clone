@@ -12,8 +12,8 @@ export default function SearchHeaderOptions() {
   
 
   const getColor = (path: 'web' | 'image') => {
-    const selectedStyle = 'border-blue-600 text-blue-500'
-    const unselectedBorderStyle = 'border-transparent'
+    const selectedStyle = 'border-rosePine-love text-rosePine-love'
+    const unselectedBorderStyle = 'border-transparent text-white'
 
     return pathName === `/search/${path}` ? selectedStyle : unselectedBorderStyle
   }

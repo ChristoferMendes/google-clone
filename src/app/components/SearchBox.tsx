@@ -25,7 +25,7 @@ export default function SearchBox() {
       <input
         type="text"
         title="text"
-        className='w-full focus:outline-none '
+        className='w-full focus:outline-none bg-rosePine-overlay text-white'
         value={term}
         onChange={(e) => setTerm(e.target.value)}
       />
